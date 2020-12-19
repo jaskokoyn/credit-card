@@ -1,34 +1,28 @@
 <div class="container">
   <div class="card mt-3">
-    <form class="card-body" [formGroup]="ccForm" (ngSubmit)="submit()">
+    <form class="card-body">
       <div class="row">
         <div class="col-md-6 mb-3">
           <label>Name on card</label>
-          <app-input [control]="ccForm.get('name')"></app-input>
+          <input type="text" class="form-control">
         </div>
         <div class="col-md-6 mb-3">
           <label>Credit card number</label>
-          <app-input [control]="ccForm.get('num')"></app-input>
+          <input type="text" class="form-control">
         </div>
       </div>
       <div class="row">
         <div class="col-md-6 mb-3">
           <label>Expiration</label>
-          <app-input [control]="ccForm.get('expiration')" m="00/00"></app-input>
+          <input type="text" class="form-control">
         </div>
         <div class="col-md-6 mb-3">
           <label>CVV</label>
-          <app-input [control]="ccForm.get('cvv')"></app-input>
+          <input type="text" class="form-control">
         </div>
       </div>
       <hr class="mb-4">
-      <button class="btn btn-primary btn-lg btn-block" type="submit" [disabled]="ccForm.invalid">Continue to
-        checkout</button>
-      <button class="btn btn-warning btn-lg btn-block" type="button" (click)="ccForm.reset()">
-        Reset
-      </button>
+      <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button>
     </form>
-    <div>Values: {{ ccForm.value | json }}</div>
-    <div>Valid: {{ ccForm.valid }}</div>
   </div>
 </div>
